@@ -1,0 +1,21 @@
+https://caddy-test.lan:9443 {
+    reverse_proxy monitor.cybercloudnetworks.net {
+        transport http {
+            tls
+            tls_insecure_skip_verify
+        }
+        header_up Host {host}
+    }
+
+    tls internal
+
+    # Optional: Log requests
+    log {
+        output file /var/log/caddy/caddy.log
+    }
+
+    # Optional: Define response headers
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    }
+}
