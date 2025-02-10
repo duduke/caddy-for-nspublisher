@@ -132,7 +132,7 @@ https://caddy-owa.office.lan:9443 {
 }
 ```
 3. Add a new Private Application with the following parameters:
-- Application Name: Outlook Web Access via Caddy
+- Application Name: **Outlook Web Access via Caddy**
 - Browser Access: **Enabled**
 - Host: **caddy-owa.office.lan**
 - Browser Access Protocol: **HTTPS**, TCP Port: **9443**
