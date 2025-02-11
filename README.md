@@ -16,7 +16,7 @@ sudo cp ./caddy /usr/bin
 ```
 sudo mkdir /etc/caddy
 ```
-7. Create a new caddy configuration file: `/etc/caddy/CaddyFile` and paste the following content:
+7. Create a new caddy configuration file: `/etc/caddy/Caddyfile` and paste the following content:
 ```
 https://caddy-owa.office.lan:9443 {
     reverse_proxy real-owa.office.lan {
