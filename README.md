@@ -110,25 +110,13 @@ ff02::2 ip6-allrouters
 NOTE: The "reverse_proxy" directive should point to the actual webapp
 ```
 https://caddy-owa.office.lan:9443 {
-    reverse_proxy real-owa.office.lan {
-        transport http {
-            tls
-            tls_insecure_skip_verify
+        reverse_proxy real-owa.office.lan:9090 {
+                transport http {
+                        tls
+                        tls_insecure_skip_verify
+                }
         }
-        header_up Host {host}
-    }
-
-    tls internal
-
-    # Optional: Log requests
-    log {
-        output file /var/log/caddy/caddy.log
-    }
-
-    # Optional: Define response headers
-    header {
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-    }
+        tls internal
 }
 ```
 3. Add a new Private Application with the following parameters:
